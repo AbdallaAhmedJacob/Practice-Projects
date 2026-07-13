@@ -7,9 +7,9 @@ by number of vehicles descending.
 
 USE VehicleMakesDB;
 GO
-
-SELECT Make, COUNT(*) AS NumberOfVehicles
-FROM vwVehicleMasterView
+SELECT Makes.Make, COUNT(*) AS NumberOfVehicles
+FROM VehicleDetails
+INNER JOIN Makes ON Makes.MakeID = VehicleDetails.MakeID
 WHERE Year BETWEEN 1950 AND 2000
 GROUP BY Make 
 ORDER BY NumberOfVehicles DESC;
