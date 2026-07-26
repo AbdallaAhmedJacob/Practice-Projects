@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsDataAccess", "Conta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsBusiness", "..\ContactsBusiness\ContactsBusiness.csproj", "{13F4624B-E6CC-4E70-9C63-7A9BCDA7BBAB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsConsoleApp", "..\ContactsConsoleApp\ContactsConsoleApp.csproj", "{C29BF66F-2494-2FA1-6948-6D4E3335119A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{13F4624B-E6CC-4E70-9C63-7A9BCDA7BBAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13F4624B-E6CC-4E70-9C63-7A9BCDA7BBAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13F4624B-E6CC-4E70-9C63-7A9BCDA7BBAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C29BF66F-2494-2FA1-6948-6D4E3335119A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C29BF66F-2494-2FA1-6948-6D4E3335119A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C29BF66F-2494-2FA1-6948-6D4E3335119A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C29BF66F-2494-2FA1-6948-6D4E3335119A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
