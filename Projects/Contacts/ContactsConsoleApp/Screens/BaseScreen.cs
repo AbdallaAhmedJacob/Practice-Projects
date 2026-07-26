@@ -1,8 +1,8 @@
 ﻿namespace ContactConsoleApp.Screens
 {
-    internal class BaseScreen
+    internal abstract class BaseScreen
     {
-        protected static void Header(string Title, string SubTitle = "")
+        protected abstract void Header(string Title, string SubTitle = "")
         {
             Console.WriteLine($"\t\t\t\t\t______________________________________");
             Console.WriteLine($"\n\n\t\t\t\t\t  {Title}");
