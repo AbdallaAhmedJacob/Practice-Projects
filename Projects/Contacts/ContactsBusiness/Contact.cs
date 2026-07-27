@@ -82,10 +82,10 @@ namespace ContactsBusiness
         {
             return ContactData.GetAllContacts();
         }
-        //public static bool IsExist(int ContactID)
-        //{
-        //    return
-        //}
+        public static bool IsExist(int ContactID)
+        {
+            return ContactData.IsExist(ContactID);
+        }
 
         public bool Save()
         {

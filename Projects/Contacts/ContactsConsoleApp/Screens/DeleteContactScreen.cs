@@ -16,13 +16,20 @@ namespace ContactsConsoleApp.Screens
             Console.Write("\t\t\t\t\tEnter ID: ");
             int.TryParse(Console.ReadLine(), out int ContactID);
 
-            if (Contact.Delete(ContactID) == true)
+            if (Contact.IsExist(ContactID))
             {
-                Console.WriteLine("\n\t\t\t\t\tContact Deleted Successfully");
+                if (Contact.Delete(ContactID) == true)
+                {
+                    Console.WriteLine("\n\t\t\t\t\tContact Deleted Successfully");
+                }
+                else
+                {
+                    Console.WriteLine("\n\t\t\t\t\tContact Deletion Failed");
+                }
             }
             else
             {
-                Console.WriteLine("\n\t\t\t\t\tContact Deletion Failed");
+                Console.WriteLine("\n\t\t\t\t\tContact ID is not exist");
             }
         }
     }

@@ -165,10 +165,11 @@ namespace ContactsDataAccess
             {
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
-               if(reader.HasRows)
+                if (reader.HasRows)
                 {
                     dataTable.Load(reader);
                 }
+                reader.Close();
             }
             catch (Exception ex)
             {
@@ -180,6 +181,31 @@ namespace ContactsDataAccess
             }
 
             return dataTable;
+        }
+        public static bool IsExist(int ContactID)
+        {
+            bool IsExist = false;
+
+            SqlConnection connection = new(ContactsDataAccessSettings.ConnectionString);
+            string sql = @"SELECT FOUND =1 FROM Contacts WHERE ContactID = @ContactID";
+            SqlCommand command = new(sql, connection);
+            command.Parameters.AddWithValue("@ContactID", ContactID);
+
+            try
+            {
+                connection.Open();
+                object result = command.ExecuteScalar();
+                if (result != null) IsExist = true;
+            }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return IsExist;
         }
     }
 }
