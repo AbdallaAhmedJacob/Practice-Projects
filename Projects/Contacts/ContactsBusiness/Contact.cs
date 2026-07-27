@@ -54,20 +54,56 @@ namespace ContactsBusiness
                 return null;
             }
         }
-        public bool Add()
+        private bool _Add()
         {
-            bool IsAdded = false;
-
             // To Do validation
 
             this.ContactID = ContactData.AddContact(this.FirstNam, this.LastNam, 
                 this.Email, this.Phone, this.CountryID);
             if(this.ContactID != -1)
             {
-                IsAdded = true;
+                this.Mode = enMode.Update;
+                return true;
             }
-            return IsAdded;
+            return false;
         }
+        private bool _Update()
+        {
+            this.Mode = enMode.Update;
+
+            return ContactData.UpdateContact(this.ContactID, this.FirstNam,
+                this.LastNam, this.Phone, this.Email, this.CountryID);
+        }
+        //public static bool Delete(int ID)
+        //{
+
+        //    return 
+        //}
+        //public static DataTable GetAllContacts()
+        //{
+
+        //}
+        //public static bool IsExist(int ContactID)
+        //{
+        //    return
+        //}
+
+        public bool Save()
+        {
+            switch(this.Mode)
+            {
+                case enMode.Update:
+                    return this._Update();
+                case enMode.Add:
+                    return this._Add();
+                default:
+                    return false;                   
+
+            }
+            
+        }
+
+
 
 
     }

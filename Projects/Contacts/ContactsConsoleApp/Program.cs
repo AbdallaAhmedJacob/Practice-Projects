@@ -1,5 +1,6 @@
 ﻿using ContactConsoleApp.Screens;
 using ContactsBusiness;
+using ContactsConsoleApp.Screens;
 
 namespace ContactConsoleApp
 {
@@ -7,7 +8,8 @@ namespace ContactConsoleApp
     {
         static void Main(string[] args)
         {
-            FindContactScreen.ShowFindContactScreen();
+            //FindContactScreen.ShowFindContactScreen();
+            AddContactScreen.Show();
         }
     }
 }

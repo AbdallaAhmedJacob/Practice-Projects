@@ -19,13 +19,7 @@ namespace ContactConsoleApp.Screens
                 Contact contact = Contact.Find(int.Parse(ID));
                 if (contact != null)
                 {
-                    Console.WriteLine($"\t\t\t\t\t______________________________________");
-                    Console.WriteLine($"\t\t\t\t\t ID        |{contact.ContactID}");
-                    Console.WriteLine($"\t\t\t\t\t Name      |{contact.FirstNam + " " + contact.LastNam}");
-                    Console.WriteLine($"\t\t\t\t\t Email     |{contact.Email}");
-                    Console.WriteLine($"\t\t\t\t\t Phone     |{contact.Phone}");
-                    Console.WriteLine($"\t\t\t\t\t Country ID|{contact.CountryID}");
-                    Console.WriteLine($"\t\t\t\t\t______________________________________");
+                    BaseScreen.PrintContactInfo(contact);
                 }
                 else
                 {
@@ -38,5 +32,7 @@ namespace ContactConsoleApp.Screens
                 con = Console.ReadLine();
             } while (con == "y" || con == "Y");
         }
+
+       
     }
 }

@@ -28,5 +28,21 @@ namespace ContactConsoleApp.Screens
             Console.WriteLine($"\t\t\t\t\t Country ID|{contact.CountryID}");
         }
 
+        public static void ReadContactInfo(ref Contact contact)
+        {
+
+            Console.Write("\t\t\t\t\tEnter first name       | ");
+            contact.FirstNam = Console.ReadLine();
+            Console.Write("\t\t\t\t\tEnter last name        | ");
+            contact.LastNam = Console.ReadLine();
+            Console.Write("\t\t\t\t\tEnter phone number     | ");
+            contact.Phone = Console.ReadLine();
+            Console.Write("\t\t\t\t\tEnter email            | ");
+            contact.Email = Console.ReadLine();
+            Console.Write("\t\t\t\t\tEnter Country id (int) | ");
+            if (int.TryParse(Console.ReadLine(), out int countryid))
+                contact.CountryID = countryid;
+        }
+
     }
 }
