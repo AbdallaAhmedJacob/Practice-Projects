@@ -9,16 +9,29 @@ namespace ContactsConsoleApp.Screens
         {
             Header("Update Contact");
 
-            Console.WriteLine("\t\t\t\t\tEnter ID ");
+            Console.Write("\t\t\t\t\tEnter ID ");
             if (!int.TryParse(Console.ReadLine(), out int contactID))
             {
-                Console.WriteLine("Update failed");
+                Console.WriteLine("\t\t\t\t\tUpdate failed");
                 return;
             }
             Contact contact = Contact.Find(contactID);
             if (contact != null)
             {
-
+                PrintContactInfo(contact);
+                Console.WriteLine($"\t\t\t\t\tUpdate Contact ID: {contact.ContactID}");
+                ReadContactInfo(ref contact);
+                Console.Write("\t\t\t\t\tAre you sur (Y/N) ");
+                string con = Console.ReadLine().ToLower();
+                if (con == "y")
+                {
+                    if (contact.Save())
+                    {
+                        Console.WriteLine("\t\t\t\t\tContact update Successfully\n\n");
+                        Console.WriteLine("\t\t\t\t\tContact after update");
+                        PrintContactInfo(contact);
+                    }
+                }
             }
         }
     }

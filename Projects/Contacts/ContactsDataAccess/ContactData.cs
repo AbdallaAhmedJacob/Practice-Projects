@@ -95,13 +95,13 @@ namespace ContactsDataAccess
             bool IsUpdated = false;
 
             SqlConnection connection = new SqlConnection(ContactsDataAccessSettings.ConnectionString);
-            string sql = @"UPDATE Contacts(FirstName, LastName, Email, Phone, CountryID)
+            string sql = @"UPDATE Contacts
                            SET
                                 FirstName=@FirstName,
                                 LastName=@LastName,
                                 Phone=@Phone,
                                 Email=@Email,
-                                CountryID=@CountryID,
+                                CountryID=@CountryID
                             WHERE ContactID=@ContactID";
             SqlCommand command = new SqlCommand(sql, connection);
 

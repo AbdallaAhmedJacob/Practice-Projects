@@ -9,7 +9,8 @@ namespace ContactConsoleApp
         static void Main(string[] args)
         {
             //FindContactScreen.ShowFindContactScreen();
-            AddContactScreen.Show();
+            //AddContactScreen.Show();
+            UpdateContactScreen.Show();
         }
     }
 }
