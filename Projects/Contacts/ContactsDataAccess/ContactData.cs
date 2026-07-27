@@ -129,7 +129,31 @@ namespace ContactsDataAccess
 
             return IsUpdated;
         }
+        public static bool DeleteContact(int ContactID)
+        {
+            bool IsDeleted = false;
+            SqlConnection connection = new(ContactsDataAccessSettings.ConnectionString);
+            string sql = @"DELETE FROM Contacts
+                           WHERE ContactID = @ContactID";
+            SqlCommand command = new(sql, connection);
+            command.Parameters.AddWithValue("@ContactID", ContactID);
 
+            try
+            {
+                connection.Open();
+                int RowsAffected = command.ExecuteNonQuery();
+                if (RowsAffected > 0) IsDeleted = true;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return IsDeleted;
+        }
 
     }
 }

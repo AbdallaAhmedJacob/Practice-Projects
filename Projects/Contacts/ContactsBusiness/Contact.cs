@@ -74,11 +74,10 @@ namespace ContactsBusiness
             return ContactData.UpdateContact(this.ContactID, this.FirstNam,
                 this.LastNam, this.Phone, this.Email, this.CountryID);
         }
-        //public static bool Delete(int ID)
-        //{
-
-        //    return 
-        //}
+        public static bool Delete(int ID)
+        {
+            return ContactData.DeleteContact(ID);
+        }
         //public static DataTable GetAllContacts()
         //{
 

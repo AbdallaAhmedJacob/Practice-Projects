@@ -10,7 +10,8 @@ namespace ContactConsoleApp
         {
             //FindContactScreen.ShowFindContactScreen();
             //AddContactScreen.Show();
-            UpdateContactScreen.Show();
+            //UpdateContactScreen.Show();
+            DeleteContactScreen.Show();
         }
     }
 }
