@@ -11,7 +11,8 @@ namespace ContactConsoleApp
             //FindContactScreen.ShowFindContactScreen();
             //AddContactScreen.Show();
             //UpdateContactScreen.Show();
-            DeleteContactScreen.Show();
+            //DeleteContactScreen.Show();
+            ListContactsScreen.Show();
         }
     }
 }

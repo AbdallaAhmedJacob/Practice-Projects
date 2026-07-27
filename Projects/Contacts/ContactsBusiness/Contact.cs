@@ -78,10 +78,10 @@ namespace ContactsBusiness
         {
             return ContactData.DeleteContact(ID);
         }
-        //public static DataTable GetAllContacts()
-        //{
-
-        //}
+        public static DataTable GetAllContacts()
+        {
+            return ContactData.GetAllContacts();
+        }
         //public static bool IsExist(int ContactID)
         //{
         //    return

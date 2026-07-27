@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using System.Data;
 
 namespace ContactsDataAccess
 {
@@ -154,6 +155,31 @@ namespace ContactsDataAccess
             }
             return IsDeleted;
         }
+        public static DataTable GetAllContacts()
+        {
+            SqlConnection connection = new(ContactsDataAccessSettings.ConnectionString);
+            string sql = @"SELECT * FROM Contacts";
+            SqlCommand command = new(sql, connection);
+            DataTable dataTable = new();
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+               if(reader.HasRows)
+                {
+                    dataTable.Load(reader);
+                }
+            }
+            catch (Exception ex)
+            {
 
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return dataTable;
+        }
     }
 }
