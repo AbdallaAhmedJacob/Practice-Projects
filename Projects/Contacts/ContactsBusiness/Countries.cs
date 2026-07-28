@@ -39,5 +39,9 @@ namespace ContactsBusiness
                 return null;
             }
         }
+        public static bool IsExist(string CountryName)
+        {
+            return CountriesData.IsExist(CountryName);
+        }
     }
 }

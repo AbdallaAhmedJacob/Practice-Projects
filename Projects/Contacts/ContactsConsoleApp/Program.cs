@@ -29,6 +29,13 @@ namespace ContactConsoleApp
             if (country != null)
                 Console.WriteLine($"{country.CountryID} {country.CountryName}");
         }
+        private static void testIsExistCountry(string CountryNmae)
+        {
+            if (Countries.IsExist(CountryNmae))
+                Console.WriteLine("Yes, Contry is here.");
+            else
+                Console.WriteLine("No, Contry is not here.");
+        }
         static void Main(string[] args)
         {
             //Contact tests
@@ -43,10 +50,12 @@ namespace ContactConsoleApp
             // Countries tests
 
             //testFindCountryByID(3);
-            testFindCountryByName("canada");
+            //testFindCountryByName("canada");
+            testIsExistCountry("germany");
+            testIsExistCountry("qatar");
 
 
 
         }
-    }
+}
 }

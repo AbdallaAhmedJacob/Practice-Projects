@@ -72,6 +72,33 @@ namespace ContactsDataAccess
             }
             return IsFound;
         }
+        public static bool IsExist(string CountryName)
+        {
+            bool IsExist = false;
+
+            SqlConnection connection = new(ContactsDataAccessSettings.ConnectionString);
+            string sql = @"SELECT FOUND =1 FROM Countries WHERE CountryName = @CountryName";
+            SqlCommand command = new(sql, connection);
+            command.Parameters.AddWithValue("@CountryName", CountryName);
+
+            try
+            {
+                connection.Open();
+                object result = command.ExecuteScalar();
+                if (result != null) IsExist = true;
+            }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return IsExist;
+        }
+
+
 
     }
 }
