@@ -4,7 +4,7 @@ namespace ContactsDataAccess
 {
     public class CountriesData
     {
-        public static bool GetCountryInfoByID(ref int CountryID, ref string CountryName)
+        public static bool GetCountryInfoByID(ref int CountryID, ref string CountryName, ref string Code, ref string PhoneCode)
         {
             bool IsFound = false;
 
@@ -22,8 +22,16 @@ namespace ContactsDataAccess
                 {
                     CountryID = (int)reader["CountryID"];
                     CountryName = (string)reader["CountryName"];
+                    if (reader["Code"] != DBNull.Value)
+                        Code = (string)reader["Code"];
+                    else
+                        Code = string.Empty;
+                    if (reader["PhoneCode"] != DBNull.Value)
+                        PhoneCode = (string)reader["PhoneCode"];
+                    else
+                        PhoneCode = string.Empty;
 
-                    IsFound = true;
+                        IsFound = true;
                 }
                 reader.Close();
             }
@@ -38,7 +46,7 @@ namespace ContactsDataAccess
             }
             return IsFound;
         }
-        public static bool GetCountryInfoByName(ref int CountryID, ref string CountryName)
+        public static bool GetCountryInfoByName(ref int CountryID, ref string CountryName, ref string Code, ref string PhoneCode)
         {
             bool IsFound = false;
 
@@ -56,6 +64,14 @@ namespace ContactsDataAccess
                 {
                     CountryID = (int)reader["CountryID"];
                     CountryName = (string)reader["CountryName"];
+                    if (reader["Code"] != DBNull.Value)
+                        Code = (string)reader["Code"];
+                    else
+                        Code = string.Empty;
+                    if (reader["PhoneCode"] != DBNull.Value)
+                        PhoneCode = (string)reader["PhoneCode"];
+                    else
+                        PhoneCode = string.Empty;
 
                     IsFound = true;
                 }

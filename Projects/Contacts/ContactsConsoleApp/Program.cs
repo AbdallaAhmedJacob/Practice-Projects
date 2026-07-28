@@ -21,7 +21,11 @@ namespace ContactConsoleApp
         {
             Countries country = Countries.Find(ID);
             if (country != null)
-                Console.WriteLine($"{country.CountryID} {country.CountryName}");
+                Console.WriteLine($"Cuontry Info " +
+                    $"\nID: {country.CountryID} " +
+                    $"\nName: {country.CountryName} " +
+                    $"\nCode: {country.Code} " +
+                    $"\nPhone Code: {country.PhoneCode}");
         }
         private static void testFindCountryByName(string CountryID)
         {
@@ -49,13 +53,13 @@ namespace ContactConsoleApp
 
             // Countries tests
 
-            //testFindCountryByID(3);
+            testFindCountryByID(3);
             //testFindCountryByName("canada");
-            testIsExistCountry("germany");
-            testIsExistCountry("qatar");
+            //testIsExistCountry("germany");
+            //testIsExistCountry("qatar");
 
 
 
         }
-}
+    }
 }
