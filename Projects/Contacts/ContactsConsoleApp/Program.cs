@@ -23,6 +23,12 @@ namespace ContactConsoleApp
             if (country != null)
                 Console.WriteLine($"{country.CountryID} {country.CountryName}");
         }
+        private static void testFindCountryByName(string CountryID)
+        {
+            Countries country = Countries.Find(CountryID);
+            if (country != null)
+                Console.WriteLine($"{country.CountryID} {country.CountryName}");
+        }
         static void Main(string[] args)
         {
             //Contact tests
@@ -36,7 +42,8 @@ namespace ContactConsoleApp
 
             // Countries tests
 
-            testFindCountryByID(3);
+            //testFindCountryByID(3);
+            testFindCountryByName("canada");
 
 
 

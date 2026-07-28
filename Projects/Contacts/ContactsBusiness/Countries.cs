@@ -26,5 +26,18 @@ namespace ContactsBusiness
                 return null;
             }
         }
+        public static Countries Find(string CountryName)
+        {
+            int CountryID = -1;
+
+            if (CountriesData.GetCountryInfoByName(ref CountryID, ref CountryName))
+            {
+                return new Countries(CountryID, CountryName);
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

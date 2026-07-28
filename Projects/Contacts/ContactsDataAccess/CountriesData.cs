@@ -38,6 +38,40 @@ namespace ContactsDataAccess
             }
             return IsFound;
         }
+        public static bool GetCountryInfoByName(ref int CountryID, ref string CountryName)
+        {
+            bool IsFound = false;
+
+            SqlConnection connection = new SqlConnection(ContactsDataAccessSettings.ConnectionString);
+            string sql = @"SELECT * FROM Countries WHERE CountryName = @CountryName";
+            SqlCommand command = new SqlCommand(sql, connection);
+            command.Parameters.AddWithValue("CountryName", CountryName);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    CountryID = (int)reader["CountryID"];
+                    CountryName = (string)reader["CountryName"];
+
+                    IsFound = true;
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                // handle Exeption.
+                IsFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return IsFound;
+        }
 
     }
 }
