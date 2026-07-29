@@ -1,22 +1,11 @@
 ﻿using ContactConsoleApp.Screens;
 using ContactsBusiness;
+using System.Data;
 
 namespace ContactConsoleApp
 {
     internal class Program
     {
-        /*
-         
-        المطلوب هو
-(ID)البحث عن البلد عن طريق *
-(Name)البحث عن البلد عن طريق *
-(ID)هل البلد موجود  عن طريق *
-(Name)هل البلد موجود  عن طريق *
-اضافة بلد*
-عرض لائحة البلدان*
-(countact) نفس مافعلناه مع
-         */
-
         private static void testFindCountryByID(int ID)
         {
             Countries country = Countries.Find(ID);
@@ -40,6 +29,14 @@ namespace ContactConsoleApp
             else
                 Console.WriteLine("No, Contry is not here.");
         }
+        private static void testGetNamesAllCountries()
+        {
+            DataTable dataTable = Countries.GetNamesAllCountries();
+            foreach (DataRow row in dataTable.Rows)
+            {
+                Console.WriteLine($"\t\t\t\t\t{row["Country"]}");
+            }
+        }
         static void Main(string[] args)
         {
             //Contact tests
@@ -53,11 +50,11 @@ namespace ContactConsoleApp
 
             // Countries tests
 
-            testFindCountryByID(3);
+            //testFindCountryByID(3);
             //testFindCountryByName("canada");
             //testIsExistCountry("germany");
             //testIsExistCountry("qatar");
-
+            testGetNamesAllCountries();
 
 
         }

@@ -158,7 +158,15 @@ namespace ContactsDataAccess
         public static DataTable GetAllContacts()
         {
             SqlConnection connection = new(ContactsDataAccessSettings.ConnectionString);
-            string sql = @"SELECT * FROM Contacts";
+            string sql = @"SELECT Contacts.ContactID AS ID,
+                                  Contacts.FirstName + ' ' + Contacts.LastName AS Name, 
+                                  Contacts.Phone,
+                                  Contacts.Email,
+                                  Contacts.Address,
+                                  Countries.CountryName AS Country
+                           FROM Contacts
+                           INNER JOIN Countries ON Contacts.CountryID = Countries.CountryID";
+                           
             SqlCommand command = new(sql, connection);
             DataTable dataTable = new();
             try

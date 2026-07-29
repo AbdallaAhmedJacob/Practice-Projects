@@ -44,7 +44,7 @@
             label3 = new Label();
             textBox3 = new TextBox();
             panel7 = new Panel();
-            comboBox1 = new ComboBox();
+            cbCountries = new ComboBox();
             label6 = new Label();
             label5 = new Label();
             textBox5 = new TextBox();
@@ -209,7 +209,7 @@
             // 
             // panel7
             // 
-            panel7.Controls.Add(comboBox1);
+            panel7.Controls.Add(cbCountries);
             panel7.Controls.Add(label6);
             panel7.Dock = DockStyle.Top;
             panel7.ForeColor = Color.FromArgb(44, 62, 80);
@@ -218,17 +218,17 @@
             panel7.Size = new Size(477, 63);
             panel7.TabIndex = 2;
             // 
-            // comboBox1
+            // cbCountries
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FlatStyle = FlatStyle.Flat;
-            comboBox1.Font = new Font("Segoe UI", 10F);
-            comboBox1.ForeColor = Color.FromArgb(44, 62, 80);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(5, 26);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(184, 31);
-            comboBox1.TabIndex = 0;
+            cbCountries.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbCountries.FlatStyle = FlatStyle.Flat;
+            cbCountries.Font = new Font("Segoe UI", 10F);
+            cbCountries.ForeColor = Color.FromArgb(44, 62, 80);
+            cbCountries.FormattingEnabled = true;
+            cbCountries.Location = new Point(5, 26);
+            cbCountries.Name = "cbCountries";
+            cbCountries.Size = new Size(184, 31);
+            cbCountries.TabIndex = 0;
             // 
             // label6
             // 
@@ -318,7 +318,7 @@
         private Label label3;
         private TextBox textBox3;
         private Panel panel7;
-        private ComboBox comboBox1;
+        private ComboBox cbCountries;
         private Label label5;
         private TextBox textBox5;
         private Label label6;

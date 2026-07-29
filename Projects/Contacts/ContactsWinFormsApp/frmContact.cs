@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ContactsBusiness;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace ContactsWinFormsApp
 {
     public partial class frmContact : Form
     {
+        Contact contact = new();
         public frmContact(int ContactID, frmMain.enMode mode)
         {
             InitializeComponent();
@@ -20,11 +22,21 @@ namespace ContactsWinFormsApp
             {
                 this.Text = "Add New Contact";
                 lblTitle.Text = "Add New Contact";
+                cbCountries.DataSource = Countries.GetNamesAllCountries();
+                cbCountries.DisplayMember = "Country";
+                cbCountries.SelectedIndex = 0;
             }
             else
             {
+                contact = Contact.Find(ContactID);
+                if (contact == null) {
+                    MessageBox.Show("Error: this Contact not found");
+                    return;
+                }
+
                 this.Text ="Edit Contact";
                 lblTitle.Text = $"Edit Contact {ContactID}";
+                cbCountries.DisplayMember = Countries.Find(contact.ContactID).CountryName;
             }
             
         }

@@ -31,22 +31,13 @@ namespace ContactsWinFormsApp
             dgvAllContacts.Dock = DockStyle.Fill;
             dgvAllContacts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            dgvAllContacts.Columns["ContactID"].HeaderText = "ID";
+            dgvAllContacts.Columns["ID"].FillWeight = 50;
             dgvAllContacts.Columns["ID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvAllContacts.Columns["FirstName"].HeaderText = "First Name";
-            dgvAllContacts.Columns["LastName"].HeaderText = "Last Name";
-            dgvAllContacts.Columns["Email"].HeaderText = "Email";
-            dgvAllContacts.Columns["Phone"].HeaderText = "Phone";
-            dgvAllContacts.Columns["Address"].HeaderText = "Address";
-            dgvAllContacts.Columns["CountryID"].HeaderText = "Country";
-
-            dgvAllContacts.Columns["ContactID"].FillWeight = 50;
-            dgvAllContacts.Columns["FirstName"].FillWeight = 85;
-            dgvAllContacts.Columns["LastName"].FillWeight = 85;
+            dgvAllContacts.Columns["Name"].FillWeight = 85;
             dgvAllContacts.Columns["Phone"].FillWeight = 90;
-            dgvAllContacts.Columns["CountryID"].FillWeight = 60;
             dgvAllContacts.Columns["Email"].FillWeight = 140;
             dgvAllContacts.Columns["Address"].FillWeight = 140;
+            dgvAllContacts.Columns["Country"].FillWeight = 80;
         }
 
         private void AddContact_Click(object sender, EventArgs e)
@@ -59,7 +50,7 @@ namespace ContactsWinFormsApp
 
         public void btnAdd_MouseEnter(object sender, EventArgs e)
         {
-            btnAddContact.BackColor = Color.FromArgb(52, 152, 219); 
+            btnAddContact.BackColor = Color.FromArgb(52, 152, 219);
         }
 
         public void btnAdd_MouseLeave(object sender, EventArgs e)
@@ -75,6 +66,31 @@ namespace ContactsWinFormsApp
 
                 dgvAllContacts.Rows[e.RowIndex].Selected = true;
             }
+        }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            if (dgvAllContacts.Rows.Count > 0)
+            {
+                DataGridViewRow selectRow = dgvAllContacts.SelectedRows[0];
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this contact",
+                    "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    int ContactID = Convert.ToInt32(selectRow.Cells[0].Value);
+                    if (Contact.Delete(ContactID))
+                    {
+                        dgvAllContacts.Rows.Remove(selectRow);
+                        MessageBox.Show("Contact delete successfully");
+                        _RefreshDataToGrid();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Contact delete fiald");
+                    }
+                }
+            }
+
         }
     }
 }

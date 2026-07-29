@@ -1,4 +1,5 @@
 ﻿using ContactsDataAccess;
+using System.Data;
 using System.Numerics;
 
 namespace ContactsBusiness
@@ -48,6 +49,10 @@ namespace ContactsBusiness
         public static bool IsExist(string CountryName)
         {
             return CountriesData.IsExist(CountryName);
+        }
+        public static DataTable GetNamesAllCountries()
+        {
+            return CountriesData.GetNamesAllCountries();
         }
     }
 }

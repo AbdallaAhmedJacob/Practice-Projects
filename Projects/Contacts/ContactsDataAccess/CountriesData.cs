@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using System.Data;
 
 namespace ContactsDataAccess
 {
@@ -31,7 +32,7 @@ namespace ContactsDataAccess
                     else
                         PhoneCode = string.Empty;
 
-                        IsFound = true;
+                    IsFound = true;
                 }
                 reader.Close();
             }
@@ -113,7 +114,32 @@ namespace ContactsDataAccess
 
             return IsExist;
         }
+        public static DataTable GetNamesAllCountries()
+        {
+            SqlConnection connection = new(ContactsDataAccessSettings.ConnectionString);
+            string sql = @"SELECT Countries.CountryName AS Country FROM Countries;";
+            SqlCommand command = new(sql, connection);
+            DataTable dataTable= new();
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    dataTable.Load(reader);
+                }
 
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dataTable;
+        }
 
 
     }

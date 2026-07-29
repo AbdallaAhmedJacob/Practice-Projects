@@ -98,19 +98,20 @@
             cmsContacts.Items.AddRange(new ToolStripItem[] { editToolStripMenuItem, deleteToolStripMenuItem });
             cmsContacts.Name = "cmsContacts";
             cmsContacts.RenderMode = ToolStripRenderMode.Professional;
-            cmsContacts.Size = new Size(123, 52);
+            cmsContacts.Size = new Size(211, 80);
             // 
             // editToolStripMenuItem
             // 
             editToolStripMenuItem.Name = "editToolStripMenuItem";
-            editToolStripMenuItem.Size = new Size(122, 24);
+            editToolStripMenuItem.Size = new Size(210, 24);
             editToolStripMenuItem.Text = "Edit";
             // 
             // deleteToolStripMenuItem
             // 
             deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            deleteToolStripMenuItem.Size = new Size(122, 24);
+            deleteToolStripMenuItem.Size = new Size(210, 24);
             deleteToolStripMenuItem.Text = "Delete";
+            deleteToolStripMenuItem.Click += Delete_Click;
             // 
             // btnAddContact
             // 
