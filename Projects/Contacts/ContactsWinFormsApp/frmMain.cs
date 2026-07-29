@@ -99,6 +99,7 @@ namespace ContactsWinFormsApp
             int ContactID = Convert.ToInt32(selectRow.Cells["ID"].Value);
             Form form = new frmContact(ContactID, Contact.enMode.Update);
             form.ShowDialog();
+            _RefreshDataToGrid();
         }
     }
 }

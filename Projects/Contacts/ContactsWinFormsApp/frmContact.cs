@@ -18,6 +18,7 @@ namespace ContactsWinFormsApp
         {
             InitializeComponent();
             contact.Mode = mode;
+            contact.ContactID = ContactID;
             frmContact_Lode();
         }
         private void frmContact_Lode()
