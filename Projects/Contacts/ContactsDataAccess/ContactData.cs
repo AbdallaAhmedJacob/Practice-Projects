@@ -1,12 +1,13 @@
 ﻿using Microsoft.Data.SqlClient;
 using System.Data;
+using System.Net;
 
 namespace ContactsDataAccess
 {
     public class ContactData
     {
         public static bool GetContactInfoByID(ref int contactID, ref string firstName, ref string lastName,
-            ref string email, ref string phone, ref int countryID)
+            ref string email, ref string phone,ref string address, ref int countryID)
         {
             bool IsFound = false;
 
@@ -27,6 +28,7 @@ namespace ContactsDataAccess
                     lastName = (string)reader["LastName"];
                     email = (string)reader["Email"];
                     phone = (string)reader["Phone"];
+                    address = (string)reader["Address"];
                     countryID = (int)reader["CountryID"];
 
                     IsFound = true;
@@ -47,13 +49,13 @@ namespace ContactsDataAccess
 
         // The function restore the added record id.
         public static int AddContact(string FirstName, string LastName,
-                string Email, string Phone, int CountryID)
+                string Email, string Phone, string Address, int CountryID)
         {
             int ID = -1;
 
             SqlConnection connection = new SqlConnection(ContactsDataAccessSettings.ConnectionString);
-            string sql = @"INSERT INTO Contacts(FirstName, LastName, Email, Phone, CountryID)
-                           VALUES (@FirstName, @LastName, @Email, @Phone, @CountryID)
+            string sql = @"INSERT INTO Contacts(FirstName, LastName, Email, Phone,Address, CountryID)
+                           VALUES (@FirstName, @LastName, @Email, @Phone, @Address, @CountryID)
                            SELECT SCOPE_IDENTITY()";
                               
             SqlCommand command = new SqlCommand(sql, connection);
@@ -67,6 +69,10 @@ namespace ContactsDataAccess
 
             command.Parameters.AddWithValue("@Email", Email);
             command.Parameters.AddWithValue("@Phone", Phone);
+            if (Address != null)
+                command.Parameters.AddWithValue("@Address", Address);
+            else
+                command.Parameters.AddWithValue("@Address", DBNull.Value);
             command.Parameters.AddWithValue("@CountryID", CountryID);
 
 
@@ -91,7 +97,7 @@ namespace ContactsDataAccess
             return ID;
         }
         public static bool UpdateContact(int ContactID, string FirstName, string LastName,
-                string Email, string Phone, int CountryID)
+                string Email, string Phone, string Address, int CountryID)
         {
             bool IsUpdated = false;
 
@@ -102,6 +108,7 @@ namespace ContactsDataAccess
                                 LastName=@LastName,
                                 Phone=@Phone,
                                 Email=@Email,
+                                Address=@Address,
                                 CountryID=@CountryID
                             WHERE ContactID=@ContactID";
             SqlCommand command = new SqlCommand(sql, connection);
@@ -111,6 +118,7 @@ namespace ContactsDataAccess
             command.Parameters.AddWithValue("@LastName", LastName);
             command.Parameters.AddWithValue("@Phone", Phone);
             command.Parameters.AddWithValue("@Email", Email);
+            command.Parameters.AddWithValue("@Address", Address);
             command.Parameters.AddWithValue("@CountryID", CountryID);
 
             try

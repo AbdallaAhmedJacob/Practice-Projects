@@ -13,7 +13,6 @@ namespace ContactsWinFormsApp
 {
     public partial class frmMain : Form
     {
-        public enum enMode { Add = 1, Update = 2 }
         public frmMain()
         {
             InitializeComponent();
@@ -42,8 +41,9 @@ namespace ContactsWinFormsApp
 
         private void AddContact_Click(object sender, EventArgs e)
         {
-            Form AddContact = new frmContact(-1, enMode.Add);
+            Form AddContact = new frmContact(-1, Contact.enMode.Add);
             AddContact.ShowDialog();
+            _RefreshDataToGrid();
         }
 
 
@@ -91,6 +91,14 @@ namespace ContactsWinFormsApp
                 }
             }
 
+        }
+
+        private void Edit_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow selectRow = dgvAllContacts.SelectedRows[0];
+            int ContactID = Convert.ToInt32(selectRow.Cells["ID"].Value);
+            Form form = new frmContact(ContactID, Contact.enMode.Update);
+            form.ShowDialog();
         }
     }
 }

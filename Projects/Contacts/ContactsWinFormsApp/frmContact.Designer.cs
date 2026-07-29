@@ -36,18 +36,18 @@
             panel6 = new Panel();
             label2 = new Label();
             label1 = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            txtLastName = new TextBox();
+            txtFirstName = new TextBox();
             panel4 = new Panel();
             label4 = new Label();
-            textBox4 = new TextBox();
+            txtEmail = new TextBox();
             label3 = new Label();
-            textBox3 = new TextBox();
+            txtPhone = new TextBox();
             panel7 = new Panel();
             cbCountries = new ComboBox();
             label6 = new Label();
             label5 = new Label();
-            textBox5 = new TextBox();
+            txtAddress = new TextBox();
             panel2 = new Panel();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
@@ -98,6 +98,7 @@
             btnClose.TabIndex = 1;
             btnClose.Text = "Close";
             btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += Close_Click;
             // 
             // btnSave
             // 
@@ -110,6 +111,7 @@
             btnSave.TabIndex = 0;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += Save_Click;
             btnSave.MouseEnter += btn_MouseEnter;
             btnSave.MouseLeave += btn_MouseLeave;
             // 
@@ -117,8 +119,8 @@
             // 
             panel6.Controls.Add(label2);
             panel6.Controls.Add(label1);
-            panel6.Controls.Add(textBox2);
-            panel6.Controls.Add(textBox1);
+            panel6.Controls.Add(txtLastName);
+            panel6.Controls.Add(txtFirstName);
             panel6.Dock = DockStyle.Top;
             panel6.ForeColor = Color.FromArgb(44, 62, 80);
             panel6.Location = new Point(10, 60);
@@ -146,26 +148,26 @@
             label1.TabIndex = 1;
             label1.Text = "First Name";
             // 
-            // textBox2
+            // txtLastName
             // 
-            textBox2.Location = new Point(255, 36);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(219, 27);
-            textBox2.TabIndex = 1;
+            txtLastName.Location = new Point(255, 36);
+            txtLastName.Name = "txtLastName";
+            txtLastName.Size = new Size(219, 27);
+            txtLastName.TabIndex = 1;
             // 
-            // textBox1
+            // txtFirstName
             // 
-            textBox1.Location = new Point(0, 36);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(252, 27);
-            textBox1.TabIndex = 0;
+            txtFirstName.Location = new Point(0, 36);
+            txtFirstName.Name = "txtFirstName";
+            txtFirstName.Size = new Size(252, 27);
+            txtFirstName.TabIndex = 0;
             // 
             // panel4
             // 
             panel4.Controls.Add(label4);
-            panel4.Controls.Add(textBox4);
+            panel4.Controls.Add(txtEmail);
             panel4.Controls.Add(label3);
-            panel4.Controls.Add(textBox3);
+            panel4.Controls.Add(txtPhone);
             panel4.Dock = DockStyle.Top;
             panel4.ForeColor = Color.FromArgb(44, 62, 80);
             panel4.Location = new Point(10, 123);
@@ -183,12 +185,12 @@
             label4.TabIndex = 3;
             label4.Text = "Email";
             // 
-            // textBox4
+            // txtEmail
             // 
-            textBox4.Location = new Point(255, 36);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(219, 27);
-            textBox4.TabIndex = 1;
+            txtEmail.Location = new Point(255, 36);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(219, 27);
+            txtEmail.TabIndex = 1;
             // 
             // label3
             // 
@@ -200,12 +202,12 @@
             label3.TabIndex = 1;
             label3.Text = "Phone";
             // 
-            // textBox3
+            // txtPhone
             // 
-            textBox3.Location = new Point(0, 36);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(252, 27);
-            textBox3.TabIndex = 0;
+            txtPhone.Location = new Point(0, 36);
+            txtPhone.Name = "txtPhone";
+            txtPhone.Size = new Size(252, 27);
+            txtPhone.TabIndex = 0;
             // 
             // panel7
             // 
@@ -250,19 +252,19 @@
             label5.TabIndex = 3;
             label5.Text = "Address";
             // 
-            // textBox5
+            // txtAddress
             // 
-            textBox5.Dock = DockStyle.Bottom;
-            textBox5.Location = new Point(0, 34);
-            textBox5.Multiline = true;
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(477, 47);
-            textBox5.TabIndex = 0;
+            txtAddress.Dock = DockStyle.Bottom;
+            txtAddress.Location = new Point(0, 34);
+            txtAddress.Multiline = true;
+            txtAddress.Name = "txtAddress";
+            txtAddress.Size = new Size(477, 47);
+            txtAddress.TabIndex = 0;
             // 
             // panel2
             // 
             panel2.Controls.Add(label5);
-            panel2.Controls.Add(textBox5);
+            panel2.Controls.Add(txtAddress);
             panel2.Dock = DockStyle.Top;
             panel2.ForeColor = Color.FromArgb(44, 62, 80);
             panel2.Location = new Point(10, 249);
@@ -309,18 +311,18 @@
         private Panel panel3;
         private Panel panel6;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txtFirstName;
         private Label label2;
-        private TextBox textBox2;
+        private TextBox txtLastName;
         private Panel panel4;
         private Label label4;
-        private TextBox textBox4;
+        private TextBox txtEmail;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox txtPhone;
         private Panel panel7;
         private ComboBox cbCountries;
         private Label label5;
-        private TextBox textBox5;
+        private TextBox txtAddress;
         private Label label6;
         private Label lblTitle;
         private Button btnClose;
