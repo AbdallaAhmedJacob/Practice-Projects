@@ -1,7 +1,7 @@
 # SQL Query Challenges
 
-Welcome to the repository for the **54 SQL Vehicle & Employee Challenges**!  
-This project contains solutions to 54 different database problems designed to practice and master core SQL concepts including aggregations, string manipulations, joins, self-joins, filtering, conditional logic, and math functions.
+Welcome to the repository for the **55 SQL Vehicle & Employee Challenges**!  
+This project contains solutions to 55 different database problems designed to practice and master core SQL concepts including aggregations, string manipulations, joins, self-joins, filtering, conditional logic, and math functions.
 
 ---
 
@@ -63,7 +63,7 @@ This project contains solutions to 54 different database problems designed to pr
 | **52** | Get all employees that have manager or does not have manager along with Manager's name, incase no manager name show null | `52-GetAllEmployeesWithManagerOrNull.sql` |
 | **53** | Get all employees that have manager or does not have manager along with Manager's name, incase no manager name show the same employee name as manager to himself | `53-GetAllEmployeesWithSelfManagerIfNull.sql` |
 | **54** | Get All Employees managed by 'Mohammed' | `54-GetEmployeesManagedByMohammed.sql` |
-
+| **55** | Get all vehicles that have engine size above average for their specific Make | `55-GetVehiclesAboveAverageEnginePerMake.sql` |
 ---
 
 ## Key Topics Covered
