@@ -66,6 +66,7 @@ This project contains solutions to several database problems designed to practic
 | **55** | Get all vehicles that have engine size above average for their specific Make | `55-GetVehiclesAboveAverageEnginePerMake.sql` |
 | **56** | Get top 3 most common FuelTypes used in vehicles | `56-GetTop3FuelTypes.sql` |
 | **57** | Get all Makes that have vehicles with both Gas and Electric FuelTypes | `57-GetMakesWithGasAndElectric.sql` |
+| **57** | Get Total vehicles and average Engine_CC grouped by NumDoors | `58-GetVehiclesStatsByDoors.sql` |
 ---
 
 ## Key Topics Covered
