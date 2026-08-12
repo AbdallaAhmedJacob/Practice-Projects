@@ -69,6 +69,7 @@ This project contains solutions to several database problems designed to practic
 | **58** | Get Total vehicles and average Engine_CC grouped by NumDoors | `58-GetVehiclesStatsByDoors.sql` |
 | **59** | Get all vehicles manufactured in the same year as the oldest vehicle in database | `59-GetOldestVehicles.sql` |
 | **60** | Get Make, Model, and rank vehicles by Engine_CC within each Make | `60-RankVehiclesByEnginePerMake.sql` |
+| **61** | Get all Makes that do not have any vehicle with 8 Cylinders | `61-GetMakesWithout8Cylinders.sql` |
 
 ---
 
