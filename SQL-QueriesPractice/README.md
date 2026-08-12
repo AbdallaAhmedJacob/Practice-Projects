@@ -68,6 +68,8 @@ This project contains solutions to several database problems designed to practic
 | **57** | Get all Makes that have vehicles with both Gas and Electric FuelTypes | `57-GetMakesWithGasAndElectric.sql` |
 | **58** | Get Total vehicles and average Engine_CC grouped by NumDoors | `58-GetVehiclesStatsByDoors.sql` |
 | **59** | Get all vehicles manufactured in the same year as the oldest vehicle in database | `59-GetOldestVehicles.sql` |
+| **60** | Get Make, Model, and rank vehicles by Engine_CC within each Make | `60-RankVehiclesByEnginePerMake.sql` |
+
 ---
 
 ## Key Topics Covered
