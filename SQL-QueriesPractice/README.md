@@ -70,6 +70,7 @@ This project contains solutions to several database problems designed to practic
 | **59** | Get all vehicles manufactured in the same year as the oldest vehicle in database | `59-GetOldestVehicles.sql` |
 | **60** | Get Make, Model, and rank vehicles by Engine_CC within each Make | `60-RankVehiclesByEnginePerMake.sql` |
 | **61** | Get all Makes that do not have any vehicle with 8 Cylinders | `61-GetMakesWithout8Cylinders.sql` |
+| **61** | Categorize vehicles into Heavy, Medium, Light based on Engine_CC | `62-CategorizeVehiclesByEngineCC.sql` |
 
 ---
 
