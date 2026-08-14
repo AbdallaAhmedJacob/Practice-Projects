@@ -2,7 +2,7 @@
 ---
 ## Project Overview
 
-This project involves designing and implementing a relational databsase for a medical clinic. 
+This project focuses on designing a relational database for a medical clinic.
 The goal is to build a structured system that manages patients, doctors, appointments, medical records and billing, ensuring data integrity and efficiet information retrieval.  
 
 ---
