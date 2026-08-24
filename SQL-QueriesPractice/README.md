@@ -75,6 +75,7 @@ This project contains solutions to several database problems designed to practic
 | **64** | Get total vehicles count per decade starting from 1950s | `64-GetVehicleCountByDecade.sql` |
 | **65** | Get all Makes that have manufactured vehicles in every single year between 2015 and 2020 | `65-GetMakesWithContinuousProduction.sql` |
 | **66** | Get all vehicles that have maximum Engine_CC for each FuelType | `66-GetMaxEngineCCPerFuelType.sql` |
+| **67** | Get Make and total vehicles count where all its vehicles have at least 4 doors   | `67-GetMakesWithOnly4DoorsOrMore.sql` |
 
 ---
 
