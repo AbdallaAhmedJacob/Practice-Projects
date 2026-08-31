@@ -78,6 +78,7 @@ This project contains solutions to several database problems designed to practic
 | **67** | Get Make and total vehicles count where all its vehicles have at least 4 doors   | `67-GetMakesWithOnly4DoorsOrMore.sql` |
 | **68** | Get all vehicles where VehicleDisplayName contains duplicated words | `68-GetVehiclesWithDuplicateWords.sql` |
 | **69** | Calculate total tax and average tax per Make using CASE WHEN logic, if Engine_CC > 3000 Tax 500, 1600-3000 Tax 300 else 100 | `69-CalculateTaxStatsPerMake.sql` |
+| **70** | Get all Makes that have higher total vehicles than the average total vehicles per Make | `70-GetMakesAboveAverageVehicleCount.sql` |
 
 ---
 
