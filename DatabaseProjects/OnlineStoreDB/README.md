@@ -30,6 +30,15 @@ The database schema was engineered to successfully satisfy the following core fu
 - **Feedback & Review Metrics:** Enable customers to submit product reviews, preserving text records, chronological timestamps, and numerical rating scores to drive recommendation algorithms.
 
 ---
+## Diagrams
+
+### Schema
+
+![Database Schema](https://github.com/AbdallaAhmedJacob/Practice-Projects/blob/main/DatabaseProjects/OnlineStoreDB/Diagrams/Schema.png)
+
+### ERD
+![Database ERD](https://github.com/AbdallaAhmedJacob/Practice-Projects/blob/main/DatabaseProjects/OnlineStoreDB/Diagrams/ERD.png)
+
 
 ## Database Schema Highlights
 
