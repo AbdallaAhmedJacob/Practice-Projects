@@ -22,6 +22,13 @@ The database was built to meet the following functional requirements:
 ---
 
 ## Database Schema
+### Schema
+
+![Database Schema](https://github.com/AbdallaAhmedJacob/Practice-Projects/blob/main/DatabaseProjects/KarateClubDB/Diagrams/Schema.png)
+
+### ERD
+![Database ERD](https://github.com/AbdallaAhmedJacob/Practice-Projects/blob/main/DatabaseProjects/KarateClubDB/Diagrams/ERD.png)
+
 
 - `schema.sql`: Contains the production DDL statements to create database entities and define cascading integrity constraints.
 - `DataPopulation.sql`: Contains the comprehensive initial seeding script injecting 50+ fully coordinated relational records for integration testing.
