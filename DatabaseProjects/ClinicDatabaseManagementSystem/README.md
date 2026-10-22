@@ -22,6 +22,9 @@ The database was built to meet the following funcational requirements:
 ---
 
 ## Database Schema
+![Database Schema](https://github.com/AbdallaAhmedJacob/Practice-Projects/blob/main/DatabaseProjects/ClinicDatabaseManagementSystem/diagrams/schema.png)
+![Database ERD](https://github.com/AbdallaAhmedJacob/Practice-Projects/blob/main/DatabaseProjects/ClinicDatabaseManagementSystem/diagrams/ERD.png)
+
 
 - `schema.sql`: Contains the DDL statements to create tables and define relationships.
 
