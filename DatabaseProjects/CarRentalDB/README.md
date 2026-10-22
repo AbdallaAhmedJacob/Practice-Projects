@@ -24,7 +24,10 @@ The database was built to meet the following functional and business requirement
 ---
 
 ## Database Schema
+![Database Schema](https://github.com/AbdallaAhmedJacob/Practice-Projects/blob/main/DatabaseProjects/CarRentalDB/Diagrams/Schema.png)
+![Database Schema](https://github.com/AbdallaAhmedJacob/Practice-Projects/blob/main/DatabaseProjects/CarRentalDB/Diagrams/ERD.png)
 
+---
 - `schema.sql`: Contains the optimized DDL statements to construct tables, data types, and primary/foreign key constraints.
 - `DataPopulation.sql`: Seeds realistic operational scenarios, tracking full mock transactional workflows from pickup to return.
 - `Queries.sql`: Includes 15 business intelligence scripts and advanced management reports covering revenue, fleet wear, and overdue contracts.
