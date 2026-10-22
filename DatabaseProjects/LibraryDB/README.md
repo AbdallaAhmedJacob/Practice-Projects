@@ -29,6 +29,15 @@ The database schema was engineered to successfully satisfy the following core fu
 - **Fine Management:** Automatically compute daily penalties for late rollbacks or asset damage, keeping tight logs on precise individual balances owed and clear transaction fulfillment statuses (Paid/Pending).
 
 ---
+## Diagrams
+
+### Schema
+
+![Database Schema](https://github.com/AbdallaAhmedJacob/Practice-Projects/blob/main/DatabaseProjects/LibraryDB/Diagrams/Schema.png)
+
+### ERD
+![Database ERD](https://github.com/AbdallaAhmedJacob/Practice-Projects/blob/main/DatabaseProjects/LibraryDB/Diagrams/ERD.png)
+
 
 ## Database Schema Highlights
 
